@@ -83,39 +83,6 @@ set fileencoding=utf-8  " The encoding written to file.
 set undodir=~/.vim/undodir
 set undofile
 
-""""""""""""""""""""""
-"COLOR SCHEME:some of my prefered
-""""""""""""""""""""""
-"colorscheme blackbeauty
-"colorscheme vividchalk
-"colorscheme inkpot
-"colorscheme lucius
-"colorscheme badwolf
-"colorscheme candycode
-"colorscheme railscasts
-"colorscheme desertEx
-"colorscheme vimhut
-"colorscheme herald
-"colorscheme jellybeans
-"colorscheme atom
-"colorscheme hybrid
-"colorscheme desert256
-"colorscheme distinguished
-colorscheme obsidian
-"colorscheme dracula
-
-"some modifications to the colorscheme
-"to view current settings use for instance ':hi Folded'
-hi clear FoldColumn
-hi clear Folded
-hi Folded ctermfg=216
-hi Folded ctermbg=none
-hi FoldColumn ctermfg=216
-hi FoldColumn ctermbg=None
-"hi clear String
-"hi String ctermfg=200
-hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-
 
 """"""""""""""""""""""""
 "DOWNLOADING PLUGINS: using vim-plug https://github.com/junegunn/vim-plug
@@ -170,6 +137,7 @@ Plug 'scrooloose/syntastic'
 
 "YankRing maintains a history of previous yanks, changes and deletes
 Plug 'vim-scripts/YankRing.vim'
+Plug 'yaoguais/phpctags.vim', { 'do': ':GoUpdateBinaries' }
 
 "extended % matching for HTML, LateX and many other languages
 Plug 'vim-scripts/matchit.zip'
@@ -275,6 +243,39 @@ Plug 'tobyS/pdv'
 let g:pdv_template_dir = $HOME ."/.vim/plugged/pdv/templates_snip"
 
 call plug#end()
+
+""""""""""""""""""""""
+"COLOR SCHEME:some of my prefered
+""""""""""""""""""""""
+"colorscheme blackbeauty
+"colorscheme vividchalk
+"colorscheme inkpot
+"colorscheme lucius
+"colorscheme badwolf
+"colorscheme candycode
+"colorscheme railscasts
+"colorscheme desertEx
+"colorscheme vimhut
+"colorscheme herald
+"colorscheme jellybeans
+"colorscheme atom
+"colorscheme hybrid
+"colorscheme desert256
+"colorscheme distinguished
+colorscheme obsidian
+"colorscheme dracula
+
+"some modifications to the colorscheme
+"to view current settings use for instance ':hi Folded'
+hi clear FoldColumn
+hi clear Folded
+hi Folded ctermfg=216
+hi Folded ctermbg=none
+hi FoldColumn ctermfg=216
+hi FoldColumn ctermbg=None
+"hi clear String
+"hi String ctermfg=200
+hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 
 """"""""""""""""""""""
 "MAPPINGS: custom mappings
@@ -572,6 +573,7 @@ let g:airline#extensions#whitespace#mixed_indent_algo = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline_section_b = '%{fnamemodify(getcwd(),":t")}'
 let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
+let g:airline#extensions#tabline#enabled = 1
 set ttimeoutlen=50
 set laststatus=2
 
